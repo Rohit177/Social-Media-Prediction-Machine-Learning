@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Academic Performance</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" autocomplete="off">
+    	<input type="text" name="Gender" placeholder="Gender" required="required" /><br>
+		<p>0: Female, 1: Male</p>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br><br>
+		<input type="text" name="Preference" placeholder="Preference" required="required" /><br>
+		<p>0: Facebook, 1: Instagram, 2: LinkedIn, 3: Snapchat, 4: Twitter, 5: WhatsApp</p>
+		<input type="text" name="Mobile" placeholder="Mobile" required="required" /><br>
+		<p>0:Yes, 1:No</p>
+        <input type="text" name="Hours" placeholder="Hours" required="required" /><br><br>
+        <input type="text" name="Comm_Teacher" placeholder="Comm_Teacher" required="required" /><br>
+		<p>0: Yes, 1: No</p>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+	
+ </div>
+
+
+</body>
+</html>

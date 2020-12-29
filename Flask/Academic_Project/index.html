@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input id = "e" type="text" name="experience" placeholder="1Experience" required="required" />
+        <input id = "ee" type="text" name="test_score" placeholder="T1est Score" required="required" />
+		<input id = "r"type="text" name="interview_score" placeholder="In1terview Score" required="required" />
+        <input id = "u"type="text" name="experience1" placeholder="Exp1erience" required="required" />
+        <input id = "l" type="text" name="test_score1" placeholder="Test S1core" required="required" />
+        <input id = "q" type="text" name="interview_score1" placeholder="Int1erview Score" required="required" />
+        <input id = "m" xtype="text" name="interview_score2" placeholder="Int1erview Score" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
